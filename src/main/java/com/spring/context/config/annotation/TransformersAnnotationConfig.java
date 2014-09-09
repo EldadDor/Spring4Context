@@ -9,10 +9,6 @@
  */
 package com.spring.context.config.annotation;
 
-import com.spring.context.model.Decepticon;
-import com.spring.context.model.combaticons.Swindle;
-import com.spring.context.model.combaticons.Vortex;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,13 +19,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.spring.context.model.combaticons.")
 public class TransformersAnnotationConfig {
-	@Bean
-	Decepticon swindle() {
-		return new Swindle();
-	}
 
-	@Bean
-	Decepticon vortex() {
-		return new Vortex();
-	}
 }

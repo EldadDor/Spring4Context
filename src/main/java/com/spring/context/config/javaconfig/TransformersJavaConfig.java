@@ -10,6 +10,8 @@
 package com.spring.context.config.javaconfig;
 
 import com.spring.context.model.Decepticon;
+import com.spring.context.model.combaticons.Swindle;
+import com.spring.context.model.combaticons.Vortex;
 import com.spring.context.model.decepticons.SoundWave;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,5 +27,15 @@ public class TransformersJavaConfig {
 	@Bean
 	public Decepticon soundWave() {
 		return new SoundWave();
+	}
+
+	@Bean
+	public Decepticon swindle() {
+		return new Swindle();
+	}
+
+	@Bean
+	public Decepticon vortex() {
+		return new Vortex();
 	}
 }
