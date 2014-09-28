@@ -10,11 +10,13 @@
 package com.spring.context.model.constrcuticons;
 
 import com.spring.context.model.Decepticon;
+import org.springframework.stereotype.Component;
 
 /**
  * @author eldad
  * @date 07/09/2014
  */
+@Component
 public class LongHaul extends Decepticon {
 
 }

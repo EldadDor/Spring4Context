@@ -33,9 +33,11 @@ public class ConfigurationLoader {
 	}
 
 	public static void main(String[] args) {
-		final ApplicationContext applicationContext = new ConfigurationLoader().loadGroovyContext();
+		final ApplicationContext applicationContext = new ConfigurationLoader().loadXmlContext();
 		System.out.println("applicationContext = " + applicationContext);
 
 	}
+
+
 }
 

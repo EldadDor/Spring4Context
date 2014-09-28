@@ -9,6 +9,8 @@
  */
 package com.spring.context.config.xml;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +25,7 @@ import javax.annotation.PostConstruct;
  */
 @Configuration
 public class TransformersXmlConfig {
+	private final static Logger logger = LogManager.getLogger(TransformersXmlConfig.class.getName());
 
 	@Bean
 	Initializer initializer() {
@@ -37,6 +40,8 @@ public class TransformersXmlConfig {
 		@PostConstruct
 		public void init() {
 			final ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext(new String[]{"spring/xml-context.xml"}, true, context);
+			logger.info("init()");
+
 		}
 
 	}

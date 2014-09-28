@@ -3,7 +3,8 @@ package spring
 import com.spring.context.model.dinobots.Grimlock
 import com.spring.context.model.dinobots.Slag
 import com.spring.context.model.dinobots.Snarl
-import com.spring.context.model.stunticons.*
+import com.spring.context.model.mock.MegaBotMock
+import com.spring.context.model.mock.StunticonMock
 
 beans {
     xmlns context: "http://www.springframework.org/schema/context"
@@ -21,16 +22,21 @@ beans {
         bean.autowire = "byName";
     }
 
-    breakDown(Breakdown) { bean ->
+    /*stunticons */
+
+    breakDown(StunticonMock) { bean ->
         bean.autowire = "byName";
     }
-    deadEnd(DeadEnd) { bean ->
+    deadEnd(StunticonMock) { bean ->
         bean.autowire = "byName";
     }
-    motorMaster(MotorMaster) {}
-    wildRider(WildRider) {}
-    dragStrip(DragStrip) {}
-    menasor(Menasor) { bean ->
+    motorMaster(StunticonMock) {}
+    wildRider(StunticonMock) { bean ->
+        bean.qualifier = "wildRider";
+        bean.autowire = "byName";
+    }
+    dragStrip(StunticonMock) {}
+    menasor(MegaBotMock) { bean ->
         bean.dependsOn = "snarl";
     }
 }

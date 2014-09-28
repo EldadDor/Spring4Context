@@ -1,4 +1,4 @@
-package com.spring.context.model.stunticons;
+package com.spring.context.model.mock;
 
 import com.beust.jcommander.internal.Lists;
 import com.spring.context.model.Decepticon;
@@ -10,16 +10,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import java.util.List;
 
 /**
- * Created by EAD-MASTER on 9/7/2014.
+ * Created by EAD-MASTER on 9/26/2014.
  */
-public class Menasor extends MegaBot {
+public class MegaBotMock extends MegaBot {
 	private List<Decepticon> bodyParts = Lists.newArrayList();
 	@Autowired
 //	@Qualifier(value = "deadEnd")
-	private DeadEnd leftHand;
+	private StunticonMock leftHand;
 	@Autowired
 	@Qualifier(value = "breakDown")
-	private Breakdown rightHand;
+	private StunticonMock rightHand;
+/*
 	@Autowired
 	@Qualifier(value = "motorMaster")
 	private MotorMaster head;
@@ -29,21 +30,16 @@ public class Menasor extends MegaBot {
 	@Autowired
 	@Qualifier(value = "dragStrip")
 	private DragStrip rightLeg;
+*/
 
 	@Override
 	protected void Unite() {
-		bodyParts.add(leftHand);
-		bodyParts.add(rightHand);
-		bodyParts.add(head);
-		bodyParts.add(leftLeg);
-		bodyParts.add(rightLeg);
+
 	}
 
 	@Override
 	protected void mergeTransformer(Transformer transformer) {
-		for (Decepticon bodyPart : bodyParts) {
-			bodyPart.transform();
-		}
+
 	}
 
 	@Override
