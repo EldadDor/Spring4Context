@@ -32,7 +32,6 @@ beans {
     }
     motorMaster(StunticonMock) {}
     wildRider(StunticonMock) { bean ->
-        bean.qualifier = "wildRider";
         bean.autowire = "byName";
     }
     dragStrip(StunticonMock) {}

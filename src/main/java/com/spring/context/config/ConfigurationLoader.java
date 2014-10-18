@@ -4,6 +4,7 @@ import com.spring.context.config.annotation.TransformersAnnotationConfig;
 import com.spring.context.config.groovy.TransformersGroovyConfig;
 import com.spring.context.config.javaconfig.TransformersJavaConfig;
 import com.spring.context.config.xml.TransformersXmlConfig;
+import com.spring.context.model.Transformer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -33,8 +34,9 @@ public class ConfigurationLoader {
 	}
 
 	public static void main(String[] args) {
-		final ApplicationContext applicationContext = new ConfigurationLoader().loadXmlContext();
+		final ApplicationContext applicationContext = new ConfigurationLoader().loadGroovyContext();
 		System.out.println("applicationContext = " + applicationContext);
+		((Transformer) applicationContext.getBean("ironHide")).fireMainWeapon();
 
 	}
 

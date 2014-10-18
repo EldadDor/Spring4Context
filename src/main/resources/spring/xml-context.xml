@@ -13,9 +13,10 @@
 
 	<!--<context:component-scan base-package="com.spring.context.model.autobots"/>-->
 	<context:component-scan base-package="#{contextProps.constrcuticons}"/>
-	<context:component-scan base-package="#{contextProps.combaticons}"/>
+	<!--<context:component-scan base-package="#{contextProps.combaticons}"/>-->
+	<context:component-scan base-package="com.spring.context.model.combaticons"/>
 	<context:component-scan base-package="#{contextProps.aerialbots}"/>
 	<context:component-scan base-package="#{contextProps.dinobots}"/>
-	<bean id="ironHyde" class="com.spring.context.model.autobots.IronHyde">
+	<bean id="ironHyde" class="com.spring.context.model.autobots.IronHide">
 	</bean>
 </beans>
