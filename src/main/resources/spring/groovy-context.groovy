@@ -13,8 +13,9 @@ beans {
     slag(Slag) {
     }
 
-    ironHide(IronHide) {
-
+    ironHide(IronHide) { beanDefinition ->
+        beanDefinition.constructorArgs = ['Water gun']
+        beanDefinition.scope = 'prototype'
     }
 
     grimlock(Grimlock) { bean ->

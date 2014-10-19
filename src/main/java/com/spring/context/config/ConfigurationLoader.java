@@ -37,6 +37,7 @@ public class ConfigurationLoader {
 		final ApplicationContext applicationContext = new ConfigurationLoader().loadGroovyContext();
 		System.out.println("applicationContext = " + applicationContext);
 		((Transformer) applicationContext.getBean("ironHide")).fireMainWeapon();
+		((Transformer) applicationContext.getBean("ironHide", "Plastic liquid Gun")).fireMainWeapon();
 
 	}
 
